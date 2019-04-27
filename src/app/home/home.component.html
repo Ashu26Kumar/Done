@@ -1,0 +1,226 @@
+<app-navigation-bar></app-navigation-bar>
+<section class="image">
+    <div >
+    <h1 style="text-align: center; padding-top: 200px; color: black;">Connect with the right doctors in Delhi/NCR</h1>
+    </div>
+
+
+</section>
+<br>
+<br>
+<br>
+    <div class="row" >
+        <div class="col-sm-2">
+            <img src="/assets/HomeOffice.PNG" class="img">
+            <br>
+            <br>
+            <a  style="color:grey; display:inline; margin-left: 35px;"class="nav-link dropdown-toggle"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Heart Specialists
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">24 Hour Clinics</a>
+                    <a class="dropdown-item" href="#">Under Budget</a>
+                    <a class="dropdown-item" href="#">Personal Clinic</a>  
+                  </div>    
+                
+                  
+        </div>
+        <div class="col-sm-2">
+            <img src="/assets/Hospitality.PNG" class="img">
+            <br>
+            <br>
+            <a  style="color:grey; display:inline; margin-left: 35px;"class="nav-link dropdown-toggle"   role="button" data-toggle="dropdown">
+                    Skin Specialist
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">24 Hour Clinics</a>
+                    <a class="dropdown-item" href="#">Under Budget</a>
+                    <a class="dropdown-item" href="#">Personal Clinic</a>  
+                  </div> 
+                
+                  
+        </div>
+        <div class="col-sm-2">
+            <img src="/assets/EducationTraining.PNG" class="img">
+            <br>
+            <br>
+            <a  style="color:grey; display:inline; margin-left: 35px;"class="nav-link dropdown-toggle"  role="button" data-toggle="dropdown">
+                    Opthalmologists
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">24 Hour Clinics</a>
+                    <a class="dropdown-item" href="#">Under Budget</a>
+                    <a class="dropdown-item" href="#">Personal Clinic</a>  
+                  </div>    
+                
+                  
+        </div>
+        <div class="col-sm-2">
+            <img src="/assets/HomeImprovement.PNG" class="img">
+            <br>
+            <br>
+            <a  style="color:grey; display:inline; margin-left: 35px;"class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+                    Neurologists
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">24 Hour Clinics</a>
+                    <a class="dropdown-item" href="#">Under Budget</a>
+                    <a class="dropdown-item" href="#">Personal Clinic</a>  
+                  </div>       
+                
+                  
+        </div>
+        <div class="col-sm-2">
+            <img src="/assets/TravelTransport.PNG" class="img">
+            <br>
+            <br>
+            <a  style="color:grey; display:inline; margin-left: 35px;"class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+                    Physician
+                  </a>
+                  
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">24 Hour Clinics</a>
+                    <a class="dropdown-item" href="#">Under Budget</a>
+                    <a class="dropdown-item" href="#">Personal Clinic</a>  
+                  </div>
+                  
+        </div>
+        <div class="col-sm-2">
+            <img src="/assets/HealthWellness.PNG" class="img">
+            <br>
+            <br>
+            <a  style="color:grey; display:inline; margin-left: 35px;"class="nav-link dropdown-toggle"  role="button" data-toggle="dropdown">
+                Gynecologist
+                  </a>
+                  
+                
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="/Maintenance">24 Hour Clinics</a>
+                    <a class="dropdown-item" routerLink="/Maintenance">Under Budget</a>
+                    <a class="dropdown-item" routerLink="/Maintenance">Personal Clinic</a>  
+                  </div>
+        </div>
+        <div class="col-sm-2">
+            
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<div style="background-color:rgb(245, 245, 245); margin-bottom: 20px;">
+    <h3 style="margin-left: 20px;">Find the right doctors for your treatment...</h3>
+    <br>
+    <div class="row" >
+        <div class="col-sm-4" *ngFor="let resu of Doctor">
+            <div class="card">
+                <img class="img-responsive" src="{{ resu.images }}" style="width: 100%; height: 200px">
+                <br>
+                <h6 style="padding-left: 0px;">{{ resu.typeName }}</h6>
+                <button id="{{resu.typeName}}" style="color:red;" (click)="getType($event.target.id)" class="btn1 ">View More</button>
+            </div>
+
+            <br><br>
+        </div>
+        
+    </div>
+
+    <br>
+    <br>
+    
+    
+    
+</div>
+
+
+<br>
+<br>
+
+<h3 style="text-align: center;">OUR USER REVIEWS</h3>
+<br>
+<div class="review-list" style="margin-left: 20px; margin-right: 20px;">
+    <ul id="reviewsList">
+        <li>
+            <div class="reviews-left">
+                <img src="/assets/fiveStar.PNG" style="width:50px; height: 30px;float: right;">
+                <br>
+                <br>
+                <img src="/assets/user.PNG">
+                <h4>SHUBHAM GARG</h4>
+                <address>
+                    <strong style="color: red">Dermatoligists</strong>
+                    <br>
+                    "Noida"
+                </address>
+                <hr>
+                <h3>Khushlok Hospital</h3>
+                <p>"It is a standout among the best hospital for skin treatment  in Noida, what an ex..."
+                </p>
+                
+            </div>
+        </li>
+        <li>
+                <div class="reviews-left">
+                    <img src="/assets/fiveStar.PNG" style="width:50px; height: 30px;float: right;">
+                    <br>
+                    <br>
+                    <img src="/assets/user.PNG">
+                    <h4>KARTIKA RAWANT</h4>
+                    <address>
+                        <strong style="color: red">Dentist</strong>
+                        <br>
+                        "Noida"
+                    </address>
+                    <hr>
+                    <h3>Narayana Hospital</h3>
+                    <p>"It is a standout among the best hospital for dentists  in Noida, what an ex..."
+                    </p>
+                    
+                </div>
+            </li>
+            <li>
+                    <div class="reviews-left">
+                        <img src="/assets/fiveStar.PNG" style="width:50px; height: 30px;float: right;">
+                        <br>
+                        <br>
+                        <img src="/assets/user.PNG">
+                        <h4>PRERNA GARG</h4>
+                        <address>
+                            <strong style="color: red">Cardiologists</strong>
+                            <br>
+                            "Noida"
+                        </address>
+                        <hr>
+                        <h3>Basu Clinic</h3>
+                        <p>"It is a standout among the best hospital for heart treatment in Noida, what an ex..."
+                        </p>
+                        
+                    </div>
+                </li>
+                <li>
+                        <div class="reviews-left">
+                            <img src="/assets/fiveStar.PNG" style="width:50px; height: 30px;float: right;">
+                            <br>
+                            <br>
+                            <img src="/assets/user.PNG">
+                            <h4>SHUBHAM KUMAR</h4>
+                            <address>
+                                <strong style="color: red">Neurologists</strong>
+                                <br>
+                                "Noida"
+                            </address>
+                            <hr>
+                            <h3>Sheel Hospital</h3>
+                            <p>"It is a standout among the best hospital for Neurologists in Noida, what an ex..."
+                            </p>
+                            
+                        </div>
+                    </li>
+    </ul>
+</div>
+
+<br>
+<br>
+<br>
+
+<app-footer></app-footer>

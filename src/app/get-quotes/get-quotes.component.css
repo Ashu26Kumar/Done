@@ -1,0 +1,15 @@
+.image{
+    background-image: url("/assets/hotel-service.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+}
+
+.img{
+    margin-left: 90px;
+}
+.tag{
+    padding-top: 20px;
+    color: darkgrey;
+    margin-left: 10px;
+}

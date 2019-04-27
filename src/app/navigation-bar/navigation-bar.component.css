@@ -1,0 +1,16 @@
+.hbtn.download-app {
+    padding-left: 25px;
+    background: url(https://lscdn.azureedge.net/content/images/v8/download-app.gif) 0 3px no-repeat;
+    font-size: 14px;
+}
+
+a.hbtn {
+    float: left;
+    margin: 0 15px;
+    padding: 4px 0;
+    position: relative;
+    text-decoration: none;
+    vertical-align: middle;
+    color: #333;
+    
+}

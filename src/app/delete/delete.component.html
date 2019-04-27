@@ -1,0 +1,56 @@
+<app-navigation-bar></app-navigation-bar>
+<br>
+<br>
+
+<div class="body">
+ 
+    <div class="row">
+      <div class="col-sm-4">
+
+      </div>
+      <div class="col-sm-4" style="margin: 20px; ">
+          <label>
+              <h3>ENTER YOUR BUSINESS ID</h3>
+            </label>
+            <br>
+            <input type="text" name="ID" placeholder="enter your Number" style="width: 100%;" [(ngModel)]="ID">
+            <br>
+            <br>
+            <button class="btn btn-primary" (click)="search()">DISPLAY</button>
+      </div>
+      <div class="col-sm-4">
+
+      </div>
+    </div>
+    
+    <div class="row" style="margin: 10px;">
+        
+        <div class="col-sm-12">
+            <div class=" container card"  style="background-color: rgb(255,182,193,0.3); margin-top:20px;" *ngFor="let resu of Business"  >
+                <h5 class="card-header" style="color: red"> {{resu.service_name}}
+                </h5>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-3" style="height: auto;">
+                        <img src="{{resu.photo}}" style="width:200px; height:200px;"> 
+                      </div>
+                      <div class="col-sm-9">
+                        <h2 style="color: red;"> {{resu.name}} ( {{resu.subService_name}} ) </h2>
+                        
+                        <p class="card-text"><i class="fas fa-address-card"></i> {{resu.address}}</p>
+                        <h5>{{resu.innerSubService_name}}</h5>
+                       <p class="card-text"><i class="fa fa-phone-volume"></i> {{resu.phoneNumber}}</p>
+                        
+                        <p class="card-text">{{resu.information}}</p>
+                        <button class="btn btn-danger" (click)="deleteCard(resu.business_ID)"> DELETE</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+              </div>        
+        </div>
+    </div>
+</div>
+<br>
+<br>
+

@@ -1,0 +1,77 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="row" >
+  <div class="col-sm-6">
+    <button class="btn btn-danger" style="margin-left: 35%; margin-top:500px" routerLink="/Delete">DELETE YOUR INFORMATION</button>
+  </div>
+  <div class="col-sm-6" style="background-color: rgb(219,112,147, 0.3); height: auto; border-radius: 10px;">
+      <h1>
+          ADD YOUR INFORMATION
+        </h1>
+        
+        <hr>
+        <form style="margin-right: 20px;">
+            <label>
+                <strong>Add your Category</strong>
+              </label>
+              <br>
+              <select [(ngModel)]="Service_Name" name="Service_Name">
+                <option value="24 Hour Clinic">24 Hour Clinic</option>
+                <option value="Under Budget">Under Budget</option>
+                <option value="Personal Clinic">Personal Clinic</option>
+              </select>
+          <br>
+          <br>
+          <label>
+            <strong>Add your Sub Category</strong>
+          </label>
+          <br>
+          <select [(ngModel)]="SubService_Name" name="SubService_Name"  >
+            <option  *ngFor="let resu of Doctor">{{ resu.typeName }}</option>
+            
+          </select>
+          <br>
+          
+         
+          <br>
+          <label> 
+            <strong>Add the name of your hospital/clinic</strong>
+          </label>
+          <br>
+          
+          <input type="text" name="Name" placeholder="Name" style="width: 100%;" [(ngModel)]="Name">
+          <br>
+          <br>
+          <label>
+            <strong>Add your contact number number:</strong>
+          </label>
+          <br>
+          <input type="text" name="Phonenumber" placeholder="Phone Number" style="width: 100%;" [(ngModel)]="PhoneNumber">
+          <br>
+          <br>
+          <label>
+            <strong>Add your address:</strong>
+          </label>
+          <br>
+          <input type="text" name="Address" placeholder="Add Address" style="width: 100%;" [(ngModel)]="Address">
+          <br>
+          <br>
+          <label> 
+            <strong>Add your information about your Hospital</strong>
+          </label>
+          <br>
+          <textarea style="width: 100%; height: 300px;" placeholder="Add your Information" name="Information" [(ngModel)]="Information"></textarea>
+          <br>
+          <label> 
+            <strong>Give the url of your Image</strong>
+          </label>
+          <br>
+          <input style="width: 100%" placeholder="Add your Image" name="Photo" [(ngModel)]="Photo">
+          <br>
+          <button class="btn btn-primary btn-block" style="margin-top: 20px; margin-bottom: 20px;" (click)="onClick()" routerLink="/Home">Get Started</button>
+        </form>
+  </div>
+  
+    
+      
+</div>

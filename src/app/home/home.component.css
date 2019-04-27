@@ -1,0 +1,81 @@
+.image{
+    background-image: url("/assets/home.jpg");
+    background-size: cover;
+    
+    
+    width: 100%;
+    height: 650px;
+}
+
+.img{
+    margin-left: 90px;
+}
+.tag{
+    padding-top: 20px;
+    color: darkgrey;
+    margin-left: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  .btn1 {
+    background-color: aliceblue;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  .btn:hover {opacity: 1}
+
+  
+iframe{
+    margin: 90px;
+    
+}
+
+.review-list ul>li {
+    display: inline-block;
+    width: 24.7%;
+    padding: 0;
+    text-align: center;
+    vertical-align: top;
+    transition: box-shadow .3s 
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.review-list ul>li .reviews-left {
+    position: relative;
+    min-height: 390px;
+    padding: 20px;
+    border-right: 1px solid darkgray;
+}
+
+.review-list ul>li .reviewd {
+    font-size: 13px;
+}
+
+.review-list ul>li .rating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.review-list ul>li .read-more {
+    float: none;
+    width: 100%;
+    padding: 15px 0;
+    border: 0;
+}

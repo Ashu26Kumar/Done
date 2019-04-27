@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-sm sticky-top" style="background-color: white;">
+  <a class="navbar-brand" routerLink="/Home"><h1 style="color:red;">CAREZONE+</h1></a>
+  <button class="navbar-toggler btn-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid black;">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li>
+        <button routerLink="/AddDelete" *ngIf="Api?.role=='Doctor'"  style="background-color: rgb(255, 126, 0);border: none; border-radius: 5px;margin-right: 40px; padding-left: 20px; padding-right: 20px; color: white; height: 40px" > List Your Hospital</button>
+      </li> 
+      
+      <li>
+          <strong><a class="nav-item navbarhover" style="color: darkgrey; margin-right: 30px; cursor: pointer;" data-target="#myModal2" *ngIf="!Api" data-toggle="modal">Signup </a></strong>
+      </li>
+
+      <li>
+          <strong><a class="nav-item navbarhover" style="color: darkgrey; margin-right: 30px; cursor: pointer;" data-target="#myModal1" *ngIf="!Api" data-toggle="modal">Login</a></strong>
+          <strong><a class="nav-item navbarhover" style="color: darkgrey; margin-right: 30px; cursor: pointer;" data-target="#myModal1" *ngIf="Api">{{Api?.firstName}}</a></strong>
+          <strong><a class="nav-item navbarhover" style="color: darkgrey; margin-right: 30px; cursor: pointer;" data-target="#myModal1" *ngIf="Api"  (click)='logout()'>Logout</a></strong>
+      </li>
+          
+      </ul>
+      
+  </div>
+</nav>
+
+<div id="myModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog" style="background-color: grey">
+  
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">LOGIN FORM</h4>
+  
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form>
+                  
+                  <label>Email</label><input type="text" class="form-control" name="email" [(ngModel)]="email"><br>
+                  <div *ngIf="!isEmailValid() && isSubmitted" class="alert alert-danger mt-1">
+                    Email is invalid!
+                  </div>
+                  <label>Password</label><input type="password" class="form-control" name="password" [(ngModel)]="password"
+                  minlength="3" required> <br>
+                  <div *ngIf="!isPasswordValid() && isSubmitted" class="alert alert-danger mt-1">
+                    Password length must be between 6 and 10!
+                  </div>
+                <button class="btn btn-success btn-block" (click)="onLoginButtonClick()" data-dismiss="modal">LOGIN</button>
+                <hr>
+                <p>New to CAREZONE+...???Go to <a style="color:red;"data-target="#myModal2" data-toggle="modal">Signup</a></p>
+                <br>
+                <p>Forgot Password? <a routerLink="/Forgot" data-dismiss="modal"><strong>Click Here!!</strong></a></p>
+            </form>
+        </div>
+        
+      </div>
+  
+    </div>
+  </div>
+  <div id="myModal2" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    
+        <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">SIGNUP FORM</h4>
+    
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <label>First Name</label><input type="text" class="form-control" name="firstName" [(ngModel)]="firstName" required><br>
+                  <label>Last Name</label><input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" required><br>
+                  <label>Phone Number</label><input type="tel" class="form-control" name="phone" [(ngModel)]="phone" required><br>
+                  <div *ngIf="!isPhoneValid() && isSubmitted" class="alert alert-danger mt-1">
+                    Enter valid phone number!
+                  </div>
+                  <label>Signup As  </label><br>
+                  <select [(ngModel)]="SignupAs" name="SignupAs">
+                    <option value="Doctor">Doctor</option>
+                    <option value="User">User</option>
+                  </select>
+                  <br>
+                  <br>
+                    <label>Email</label><input type="text" class="form-control" name="email" [(ngModel)]="email" required><br>
+                    <div *ngIf="!isEmailValid() && isSubmitted" class="alert alert-danger mt-1">
+                      Email is invalid!
+                    </div>
+                    <label>Password</label><input required type="password" class="form-control" name="password" [(ngModel)]="password"
+                    minlength="3" required> <br>
+                    <div *ngIf="!isPasswordValid() && isSubmitted" class="alert alert-danger mt-1">
+                      Password length must be between 6 and 10!
+                    </div>
+                    <label>Retype Password</label><input required type="password" class="form-control" name="retypePassword" [(ngModel)]="retypePassword"
+                    minlength="3" required> <br>
+                    <div *ngIf="!isPasswordMatchValid() && isSubmitted" class="alert alert-danger mt-1">
+                      Password do not match!!
+                    </div>
+                  <button class="btn btn-success btn-block" (click)="onSignupButtonClick()"  data-dismiss="modal">Signup</button>
+                  
+              </form>
+          </div>
+          
+        </div>
+    
+      </div>
+    </div>
+  
+<ngx-spinner></ngx-spinner>

@@ -1,0 +1,75 @@
+<app-navigation-bar></app-navigation-bar>
+<section class="image">
+    <div>
+    <h1 style="text-align: center; padding-top: 70px; color: black;">Connect with the right services experts in Delhi/NCR</h1>  
+    </div>
+
+    <div  style="text-align: center; padding-top: 70px; color: black;">
+      <h3>Search For your Services</h3>
+    </div>
+    <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+        <div class="searchbar"  style="margin-top: 10px;">
+          <input class="search_input" type="text" name="name" placeholder="Search..." [(ngModel)]="name">
+          <a class="search_icon" (click)="search()"><i class="fas fa-search" ></i></a>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<br>
+
+
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-sm-3">
+      <div class="container card" style="background-color: white;margin-top: 20px; margin-left: 20px;">
+        <p style="color: grey">FILTER BY:-</p>
+        <hr>
+        <h4>Category</h4>
+        <select [(ngModel)]="SubService_Name" name="SubService_Name">
+          <optgroup>
+              <option value="24 Hour Clinic" label="24 Hour Clinic">24 Hour Clinic</option>
+              <option value="Under Budget" label="Under Budget">Under Budget</option>
+              <option value="Personal Clinic" label="Personal Clinic">Personal Clinic</option>
+          </optgroup>
+          
+        </select>
+        <br>
+        <!-- <hr> 
+        
+        <br><h4>Services</h4>
+        <select [(ngModel)]="InnerSubService_Name" name="InnerSubService_name" >
+          <option value="cleaning">Cleaning</option>
+          <option value="maintenance">Maintenance</option>
+        </select> -->
+        <button class="btn btn-primary" (click)="Filter()" style="margin-bottom: 20px;">Filter</button>
+      </div>
+    </div>
+    <div class="col-sm-9" style="margin-bottom: 20px;">
+        <div class=" container card"  style="background-color: rgb(255,182,193,0.3); margin-top:20px;" *ngFor="let resu of Business"  >
+            <h5 class="card-header" style="color: red"> {{resu.service_name}}
+            </h5>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3" style="height: auto;">
+                    <img src="{{resu.photo}}" style="width:250px; height:100%"> 
+                  </div>
+                  <div class="col-sm-9">
+                    <h2 style="color: red;"> {{resu.name}} ( {{resu.subService_name}} ) </h2>
+                    
+                    <p class="card-text"><i class="fas fa-address-card"></i>{{resu.address}}</p>
+                    
+                   <p class="card-text"><i class="fa fa-phone-volume"></i> {{resu.phoneNumber}}</p>
+                    
+                    <p class="card-text">{{resu.information}}</p>
+                    <button class="btn btn-danger" routerLink="/getQuotes">GET APPOINTMENT</button>
+                  </div>
+                  
+                </div>
+              </div>
+          </div>        
+    </div>
+</div>
+<app-footer></app-footer>
